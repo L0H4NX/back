@@ -1,0 +1,1 @@
+--ALTER TABLE wkp_regra ADD COLUMN teste_flyway int;
