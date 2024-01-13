@@ -1,4 +1,4 @@
-package com.zoeAcademy.repository.User.product;
+package com.zoeAcademy.repository.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

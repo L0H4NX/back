@@ -1,22 +1,20 @@
-package com.zoeAcademy.models.product;
+package com.zoeAcademy.models.course;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-import com.zoeAcademy.models.course.Course;
+import com.zoeAcademy.models.product.Product;
 
 import lombok.Data;
 
-@Data
 @Entity
-public class Product {
+@Data
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,17 +27,19 @@ public class Product {
 
     private Boolean active;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<Course> courses;
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
-    public Product() {
+    public Course() {
 
     }
 
-    public Product(String name, String description, Boolean active, List<Course> courses) {
+    public Course(Long id, String name, String description, Boolean active, Product product) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.active = active;
-        this.courses = courses;
+        this.product = product;
     }
 }

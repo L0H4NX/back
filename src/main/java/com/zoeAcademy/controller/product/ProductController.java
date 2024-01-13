@@ -1,4 +1,4 @@
-package com.zoeAcademy.controller.User.product;
+package com.zoeAcademy.controller.product;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zoeAcademy.models.GenericReturn;
 import com.zoeAcademy.models.product.Product;
-import com.zoeAcademy.service.User.product.ProductService;
+import com.zoeAcademy.service.product.ProductService;
 
 @RestController
 @RequestMapping("/product")

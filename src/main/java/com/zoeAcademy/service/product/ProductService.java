@@ -1,4 +1,4 @@
-package com.zoeAcademy.service.User.product;
+package com.zoeAcademy.service.product;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zoeAcademy.models.GenericReturn;
 import com.zoeAcademy.models.product.Product;
-import com.zoeAcademy.repository.User.product.ProductRepository;
+import com.zoeAcademy.repository.product.ProductRepository;
 
 @Service
 public class ProductService {
