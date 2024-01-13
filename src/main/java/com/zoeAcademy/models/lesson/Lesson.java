@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.zoeAcademy.models.course.Course;
+import com.zoeAcademy.models.exercise.Exercise;
 import com.zoeAcademy.models.video.Video;
 
 import java.util.List;
@@ -36,4 +37,7 @@ public class Lesson {
 
     @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Video> videos;
+
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
+    private List<Exercise> exercises;
 }
