@@ -18,6 +18,8 @@ import com.zoeAcademy.models.GenericReturn;
 import com.zoeAcademy.models.User;
 import com.zoeAcademy.service.User.UserService;
 
+import kong.unirest.HttpStatus;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -29,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/verify-user")
-    public ResponseEntity<GenericReturn<?>> verifyUser(@RequestParam("email") String email,
+    public ResponseEntity<GenericReturn<User>> verifyUser(@RequestParam("email") String email,
             @RequestParam("password") String password) {
         return ResponseEntity.ok(userService.verifyUser(email, password));
     }

@@ -15,7 +15,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public GenericReturn<?> verifyUser(String email, String password) {
+    public GenericReturn<User> verifyUser(String email, String password) {
         User user = userRepository.findByEmailAndPassword(email, password);
 
         if (user == null) {
