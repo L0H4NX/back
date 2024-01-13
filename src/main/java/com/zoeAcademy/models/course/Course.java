@@ -1,13 +1,18 @@
 package com.zoeAcademy.models.course;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import com.zoeAcademy.models.lesson.Lesson;
 import com.zoeAcademy.models.product.Product;
 
 import lombok.Data;
@@ -30,6 +35,9 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<Lesson> lessons;
 
     public Course() {
 

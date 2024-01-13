@@ -25,7 +25,7 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @GetMapping("find-all-by-product-id/{id}")
+    @GetMapping("/find-all-by-product-id/{id}")
     public ResponseEntity<GenericReturn<List<Course>>> getAllCourses(@PathVariable("id") Long id) {
         return ResponseEntity.ok(courseService.getAllCoursesByProductId(id));
     }
@@ -35,7 +35,7 @@ public class CourseController {
         return ResponseEntity.ok(courseService.createCourse(course));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<GenericReturn<?>> deleteCourse(@PathVariable("id") Long id) {
         return ResponseEntity.ok(courseService.deleteCourse(id));
     }
